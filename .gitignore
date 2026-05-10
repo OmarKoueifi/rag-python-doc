@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Application data — raw source HTML and downloaded archives are derived
+backend/data/raw/
+# The chroma index is intentionally committed so the Render free-tier deploy
+# has a persisted vector store (the free tier has no persistent disk).
+# To rebuild from scratch: `python scripts/ingest.py --rebuild`
+#   and commit the updated backend/data/chroma/ directory.
+!backend/data/chroma/
+backend/data/chroma/*.log
+
+# SQLite runtime databases (seed fixture is committed separately as a .sql file)
+backend/data/*.db
+backend/data/*.db-journal
+backend/data/*.db-wal
+backend/data/*.db-shm
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+*.swp

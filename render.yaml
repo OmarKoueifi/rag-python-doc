@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: rag-python-doc-api
+    runtime: python
+    plan: free
+    region: oregon
+    rootDir: .
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.10"
+      - key: ENVIRONMENT
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_CHAT_MODEL
+        value: gpt-4o-mini
+      - key: OPENAI_EMBEDDING_MODEL
+        value: text-embedding-3-small
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///./data/app.db
+      - key: CHROMA_PATH
+        value: ./data/chroma
+      - key: CHROMA_COLLECTION
+        value: python_docs
+      - key: PYTHON_DOCS_VERSION
+        value: "3.12.7"
+      - key: PYTHON_DOCS_MODULES
+        value: asyncio,typing
+      - key: CHAT_RATE_LIMIT_PER_MINUTE
+        value: "30"
+      - key: SEED_ON_STARTUP
+        value: "true"

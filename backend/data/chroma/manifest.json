@@ -1,0 +1,32 @@
+{
+  "version": "3.12.7",
+  "version_minor": "3.12",
+  "modules": [
+    "asyncio",
+    "typing"
+  ],
+  "chunk_count": 399,
+  "api_chunks": 284,
+  "prose_chunks": 115,
+  "pages_ingested": [
+    "library/asyncio-dev.html",
+    "library/asyncio-eventloop.html",
+    "library/asyncio-exceptions.html",
+    "library/asyncio-extending.html",
+    "library/asyncio-future.html",
+    "library/asyncio-platforms.html",
+    "library/asyncio-policy.html",
+    "library/asyncio-protocol.html",
+    "library/asyncio-queue.html",
+    "library/asyncio-runner.html",
+    "library/asyncio-stream.html",
+    "library/asyncio-subprocess.html",
+    "library/asyncio-sync.html",
+    "library/asyncio-task.html",
+    "library/asyncio.html",
+    "library/typing.html"
+  ],
+  "embedding_model": "text-embedding-3-small",
+  "chroma_collection": "python_docs",
+  "indexed_at": "2026-04-17T15:16:15.559030+00:00"
+}

@@ -10,7 +10,7 @@ end-to-end on free-tier hosting.
 
 ## Try it live
 
-**Live demo:** https://python-doc-chat.vercel.app
+**Live demo:** https://rag-python-doc.vercel.app
 
 Try a question like:
 
